@@ -51,6 +51,9 @@ def ratInAMaze_recursive(size, matrix_list):
     path =  find_path(start, desination, matrix)
     
     solution = build_solution(size, path)
+    if solution == None:
+        print("Solution doesn't exist")
+        return
     print(solution)
 
 size = 4
