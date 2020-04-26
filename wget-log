@@ -1,0 +1,21 @@
+--2020-04-18 15:37:44--  https://github.com/OpenVPN/easy-rsa/releases/download/v3.0.7/EasyRSA-3.0.7.tgz
+Resolving github.com (github.com)... 13.229.188.59
+Connecting to github.com (github.com)|13.229.188.59|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://github-production-release-asset-2e65be.s3.amazonaws.com/4519663/0fa24e00-72ba-11ea-9afe-6e5829eec4a4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20200418%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200418T083559Z&X-Amz-Expires=300&X-Amz-Signature=8478b5f1a9dbb696c557608f125d6b0f593de78f18aef1076b1241383c6b6f49&X-Amz-SignedHeaders=host&actor_id=0&repo_id=4519663&response-content-disposition=attachment%3B%20filename%3DEasyRSA-3.0.7.tgz&response-content-type=application%2Foctet-stream [following]
+--2020-04-18 15:37:44--  https://github-production-release-asset-2e65be.s3.amazonaws.com/4519663/0fa24e00-72ba-11ea-9afe-6e5829eec4a4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20200418%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200418T083559Z&X-Amz-Expires=300&X-Amz-Signature=8478b5f1a9dbb696c557608f125d6b0f593de78f18aef1076b1241383c6b6f49&X-Amz-SignedHeaders=host&actor_id=0&repo_id=4519663&response-content-disposition=attachment%3B%20filename%3DEasyRSA-3.0.7.tgz&response-content-type=application%2Foctet-stream
+Resolving github-production-release-asset-2e65be.s3.amazonaws.com (github-production-release-asset-2e65be.s3.amazonaws.com)... 52.216.9.27
+Connecting to github-production-release-asset-2e65be.s3.amazonaws.com (github-production-release-asset-2e65be.s3.amazonaws.com)|52.216.9.27|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 48215 (47K) [application/octet-stream]
+Saving to: ‘/home/vm13/EasyRSA-3.0.7.tgz.1’
+
+EasyRSA-3.0.7.tgz.1    0%[                    ]       0  --.-KB/s    in 3.8s    
+
+2020-04-18 15:52:59 (0.00 B/s) - Read error at byte 0/48215 (Success). Retrying.
+
+--2020-04-18 15:53:00--  (try: 2)  https://github-production-release-asset-2e65be.s3.amazonaws.com/4519663/0fa24e00-72ba-11ea-9afe-6e5829eec4a4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20200418%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200418T083559Z&X-Amz-Expires=300&X-Amz-Signature=8478b5f1a9dbb696c557608f125d6b0f593de78f18aef1076b1241383c6b6f49&X-Amz-SignedHeaders=host&actor_id=0&repo_id=4519663&response-content-disposition=attachment%3B%20filename%3DEasyRSA-3.0.7.tgz&response-content-type=application%2Foctet-stream
+Connecting to github-production-release-asset-2e65be.s3.amazonaws.com (github-production-release-asset-2e65be.s3.amazonaws.com)|52.216.9.27|:443... connected.
+HTTP request sent, awaiting response... 403 Forbidden
+2020-04-18 15:53:03 ERROR 403: Forbidden.
+

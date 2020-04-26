@@ -60,9 +60,40 @@ def NQueen():
                     board[last_queen[0]][last_queen[1]] = 0
                 else:
                     break
-    
     print('No solution found')
 
+def NQueen_recursive():
+    size = int(input('Enter board size: '))
+    board = [[0 for i in range(size)] for j in range(size)]
+    
+    for i in range(size):
+        if solveBoard(size, (0, i), board):
+            print_solution(size, board)
+            return
+
+    print('No solution found')
+    return 
+
+def solveBoard(size, location, board):
+    x_loc = location[0]
+    y_loc = location[1]
+
+    # print_solution(size, board)
+
+    if if_attacks(size, board, location) == True:
+        return False
+    
+    board[x_loc][y_loc] = 1
+    if x_loc == size - 1:
+        return True
+
+    for i in range(size):
+        if solveBoard(size, (x_loc + 1, i), board) == True:
+            return True
+    
+    board[x_loc][y_loc] = 0
+    return False
+        
 
 
 # size = 4
@@ -79,4 +110,5 @@ def NQueen():
 # print(if_attacks(size, board, (0, 3)))
 
 NQueen()
+NQueen_recursive()
         
