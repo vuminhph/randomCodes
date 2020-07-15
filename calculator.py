@@ -21,41 +21,53 @@ class Stack:
             self.top -= 1
             return item
 
+    def add_top_value(self, add_by):
+        self.stack[self.top] += add_by
+
 def main():
-    s = '(2 + (4 + 2) - 1) - (5 + 8)'
+    s = '3 - 1 + 2'
     print(calculator(s))
 
 def calculator(s):
     s = s.replace(' ', '')
+    SIZE = 10
 
-    max_depth = 10
-    result = [0 for i in range(max_depth)]
-    depth_level = 0
-
-    parenthesis_st = Stack(max_depth)
-    operand_st = Stack(2)
-    operator_st = Stack(2)
+    multi_digit = 0
+    negative_opt = [False for i in range(SIZE)]
     
-    for char in s:
+    result_st = Stack(SIZE)
+    result_st.push(0)
+
+    for i, char in enumerate(s):
         if char == '(':
-            parenthesis_st.push(char)
-            depth_level += 1
+            result_st.push(0)
+
         elif char.isdigit():
-            operand_st.push(int(char))
-            if not operator_st.isEmpty():
-                result[depth_level] += operation_result(operator_st, operand_st)
-        elif char in ('+', '-'):
-            operator_st.push(char)
+            if i != len(s) - 1 and s[i + 1].isdigit():
+                    multi_digit = multi_digit * 10 + int(char)
+                    continue
+
+            if negative_opt[result_st.top]:
+                add_by = - (multi_digit * 10 + int(char))
+                multi_digit = 0
+                negative_opt[result_st.top] = False
+            else:
+                add_by = multi_digit * 10 + int(char)
+                multi_digit = 0
+
+            result_st.add_top_value(add_by)
+
+        elif char == '-':
+            negative_opt[result_st.top] = True
+
         elif char == ')':
-            depth_level -= 1
-            result[depth_level] += sum(result[depth_level + 1])
-            result[depth_level + 1] = 0
+            inner_result = result_st.pop()
+            inner_result = inner_result  if not negative_opt[result_st.top] else - inner_result
 
-    return result[0]
+            result_st.add_top_value(inner_result)
 
+    return result_st.pop()
 
-def operation_result(operator_st, operand_st):
-    return operand_st.pop() + operand_st.pop() if operator_st.pop() == '+' else operand_st.pop() - operand_st.pop()
 
 if __name__ == '__main__':
     main()
